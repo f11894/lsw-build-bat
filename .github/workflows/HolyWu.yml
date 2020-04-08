@@ -1,0 +1,21 @@
+name: HolyWu_builds
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run a multi-line script
+      shell: cmd
+      run: |
+        cd HolyWu
+        .\lsw-build-HolyWu.bat
+        
+    - uses: actions/upload-artifact@v2-preview
+      with:
+        name: HolyWu_builds
+        path: HolyWu\L-SMASH-Works-*.zip
