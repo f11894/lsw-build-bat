@@ -15,7 +15,7 @@ jobs:
         cd HolyWu
         .\lsw-build-HolyWu.bat
         
-    - uses: actions/upload-artifact@v2-preview
+    - uses: actions/upload-artifact@v2
       with:
         name: HolyWu_builds
         path: HolyWu\L-SMASH-Works-*.zip

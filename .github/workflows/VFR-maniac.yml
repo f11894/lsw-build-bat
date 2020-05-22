@@ -15,7 +15,7 @@ jobs:
         cd VFR-maniac
         .\lsw-build-VFR-maniac.bat
         
-    - uses: actions/upload-artifact@v2-preview
+    - uses: actions/upload-artifact@v2
       with:
         name: VFR-maniac_builds
         path: VFR-maniac\L-SMASH-Works-*.zip
