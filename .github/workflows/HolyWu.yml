@@ -18,4 +18,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: HolyWu_builds
-        path: HolyWu\L-SMASH-Works-*.zip
+        path: L-SMASH-Works-HolyWu*.zip

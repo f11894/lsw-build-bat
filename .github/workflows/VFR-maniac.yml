@@ -18,4 +18,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: VFR-maniac_builds
-        path: VFR-maniac\L-SMASH-Works-*.zip
+        path: L-SMASH-Works-VFR-maniac*.zip
