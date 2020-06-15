@@ -1,4 +1,4 @@
-if [ ! -d aom ]; then
+if [ ! -d dav1d ]; then
     git clone https://code.videolan.org/videolan/dav1d
 else
     git -C dav1d pull | grep 'Already up to date.' && exit
