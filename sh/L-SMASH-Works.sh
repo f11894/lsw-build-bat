@@ -1,6 +1,6 @@
-author=$(echo "$1" | sed -r 's/https:\/\/github\.com\/([^\/]+)\/L-SMASH-Works/\1/')
+author=$1
 if [ ! -d L-SMASH-Works-${author} ]; then
-    git clone $1 L-SMASH-Works-${author}
+    git clone https://github.com/${author}/L-SMASH-Works L-SMASH-Works-${author}
 else
     git -C L-SMASH-Works-${author} pull
 fi

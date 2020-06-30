@@ -15,7 +15,7 @@ copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x dav1d.sh"
 .\msys64\usr\bin\bash -lc "sh -x ffmpeg.sh '--disable-decoder=vp9 --enable-libdav1d --enable-libvpx'"
 .\msys64\usr\bin\bash -lc "sh -x l-smash.sh"
-.\msys64\usr\bin\bash -lc "sh -x L-SMASH-Works.sh 'https://github.com/%author%/L-SMASH-Works'"
+.\msys64\usr\bin\bash -lc "sh -x L-SMASH-Works.sh '%author%'"
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C L-SMASH-Works-%author% log --oneline --no-merges | wc -l"') do set "revision=%%i"
 ".\msys64\home\%USERNAME%\l-smash\cli\muxer.exe" --version 2>&1 | find "L-SMASH isom/mov multiplexer" >ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C mfx_dispatch log --pretty=%%h -1"') do echo mfx_dispatch ver. %%~i>>ver.txt
