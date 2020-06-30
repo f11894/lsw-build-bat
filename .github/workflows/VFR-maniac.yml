@@ -12,7 +12,6 @@ jobs:
     - name: Run a multi-line script
       shell: cmd
       run: |
-        cd VFR-maniac
         .\lsw-build-VFR-maniac.bat
         
     - uses: actions/upload-artifact@v2

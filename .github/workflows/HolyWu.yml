@@ -12,7 +12,6 @@ jobs:
     - name: Run a multi-line script
       shell: cmd
       run: |
-        cd HolyWu
         .\lsw-build-HolyWu.bat
         
     - uses: actions/upload-artifact@v2
