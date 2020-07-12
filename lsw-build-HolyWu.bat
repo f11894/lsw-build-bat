@@ -18,9 +18,9 @@ copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x L-SMASH-Works.sh '%author%'"
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C L-SMASH-Works-%author% log --oneline --no-merges | wc -l"') do set "revision=%%i"
 ".\msys64\home\%USERNAME%\l-smash\cli\muxer.exe" --version 2>&1 | find "L-SMASH isom/mov multiplexer" >ver.txt
-for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C mfx_dispatch log --pretty=%%h -1"') do echo mfx_dispatch ver. %%~i>>ver.txt
-for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C nv-codec-headers log --pretty=%%h -1"') do echo nv-codec-headers ver. %%~i>>ver.txt
-for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C libvpx log --pretty=%%h -1"') do echo libvpx ver. %%~i>>ver.txt
-for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C dav1d log --pretty=%%h -1"') do echo dav1d ver. %%~i>>ver.txt
+for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C mfx_dispatch log --pretty=%%h -1"') do echo mfx_dispatch %%~i>>ver.txt
+for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C nv-codec-headers log --pretty=%%h -1"') do echo nv-codec-headers %%~i>>ver.txt
+for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C libvpx log --pretty=%%h -1"') do echo libvpx %%~i>>ver.txt
+for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C dav1d log --pretty=%%h -1"') do echo dav1d %%~i>>ver.txt
 more <".\msys64\home\%USERNAME%\ffmpeg_ver.txt">>ver.txt
 PowerShell Compress-Archive -Force -Path "ver.txt,.\msys64\home\%USERNAME%\L-SMASH-Works-%author%\AviUtl\lwinput.aui,.\msys64\home\%USERNAME%\L-SMASH-Works-%author%\AviUtl\lwdumper.auf,.\msys64\home\%USERNAME%\L-SMASH-Works-%author%\AviUtl\lwmuxer.auf,.\msys64\home\%USERNAME%\L-SMASH-Works-%author%\AviUtl\lwcolor.auc" -DestinationPath L-SMASH-Works-%author%-r%revision%.zip 
