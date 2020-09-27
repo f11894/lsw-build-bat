@@ -18,6 +18,7 @@ copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x L-SMASH-Works.sh '%author%'"
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C L-SMASH-Works-%author% log --oneline --no-merges | wc -l"') do set "revision=%%i"
 ".\msys64\home\%USERNAME%\l-smash\cli\muxer.exe" --version 2>&1 | find "L-SMASH isom/mov multiplexer" >ver.txt
+for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C AviSynthPlus log --pretty=%%h -1"') do echo AviSynthPlus %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C mfx_dispatch log --pretty=%%h -1"') do echo mfx_dispatch %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C nv-codec-headers log --pretty=%%h -1"') do echo nv-codec-headers %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C aom log --pretty=%%h -1"') do echo libaom %%~i>>ver.txt
