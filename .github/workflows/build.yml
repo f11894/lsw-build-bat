@@ -1,0 +1,23 @@
+name: Build L-SMASH Works AviUtl Plugin
+
+on: [push, pull_request]
+
+jobs:
+  build:
+      runs-on: windows-latest
+      strategy:
+        matrix:
+          author: [HolyWu, VFR-maniac]
+  
+      steps:
+      - uses: actions/checkout@v2
+  
+      - name: Run a build bat
+        shell: cmd
+        run: |
+          .\lsw-build-${{ matrix.author }}.bat
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.author }}_builds
+          path: L-SMASH-Works-${{ matrix.author }}*.zip
