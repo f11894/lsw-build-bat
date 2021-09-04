@@ -11,7 +11,7 @@ if [  -d dav1d_build ]; then
 fi
 mkdir dav1d_build
 cd dav1d_build
-meson ../ --buildtype release --default-library static
+meson ../ --buildtype release --default-library static --prefix=/mingw32/
 ninja clean
 ninja -j $(nproc)
 ninja install
