@@ -9,7 +9,7 @@ if [ ! -d ffmpeg-${FFmpeg_ver} ]; then
     popd
 fi
 cd ffmpeg-${FFmpeg_ver}
-./configure --target-os=mingw32 --prefix=/mingw32/ --disable-shared --disable-debug --disable-network --disable-encoders --disable-doc $1 --enable-libmfx --enable-static --enable-gpl --enable-version3 --enable-runtime-cpudetect --enable-avisynth
+./configure --target-os=mingw32 --prefix=/mingw32/ --disable-shared --disable-debug --disable-network --disable-encoders --disable-doc --disable-avisynth $1 --enable-version3 --enable-libmfx --enable-static --enable-runtime-cpudetect
 make clean
 make uninstall
 make -j $(nproc)

@@ -9,7 +9,6 @@ if not exist .\msys64 (
 .\msys64\usr\bin\bash -lc "pacman -Su --noconfirm" 
 .\msys64\usr\bin\bash -lc "pacman -S --needed mingw-w64-i686-cmake mingw-w64-i686-gcc mingw-w64-i686-nasm mingw-w64-i686-yasm mingw-w64-i686-ninja mingw-w64-i686-pkg-config mingw-w64-i686-meson git base-devel --noconfirm"
 copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
-.\msys64\usr\bin\bash -lc "sh -x AviSynthPlus.sh"
 .\msys64\usr\bin\bash -lc "sh -x mfx_dispatch.sh"
 .\msys64\usr\bin\bash -lc "sh -x nv-codec-headers.sh"
 .\msys64\usr\bin\bash -lc "sh -x libvpx.sh"
@@ -19,7 +18,6 @@ copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x L-SMASH-Works.sh '%author%'"
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C L-SMASH-Works-%author% log --oneline --no-merges | wc -l"') do set "revision=%%i"
 ".\msys64\home\%USERNAME%\l-smash\cli\muxer.exe" --version 2>&1 | find "L-SMASH isom/mov multiplexer" >ver.txt
-for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C AviSynthPlus log --pretty=%%h -1"') do echo AviSynthPlus %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C mfx_dispatch log --pretty=%%h -1"') do echo mfx_dispatch %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C nv-codec-headers log --pretty=%%h -1"') do echo nv-codec-headers %%~i>>ver.txt
 for /f "delims=" %%i in ('.\msys64\usr\bin\bash -lc "git -C libvpx log --pretty=%%h -1"') do echo libvpx %%~i>>ver.txt
