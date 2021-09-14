@@ -7,7 +7,7 @@ jobs:
       runs-on: windows-latest
       strategy:
         matrix:
-          author: [HolyWu, VFR-maniac]
+          author: [HolyWu, VFR-maniac, Mr-Ojii]
   
       steps:
       - uses: actions/checkout@v2
