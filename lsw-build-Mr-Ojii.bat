@@ -1,5 +1,6 @@
 set author=Mr-Ojii
 set MSYSTEM=MINGW32
+set LDFLAGS=-static-libgcc -static-libstdc++
 if not exist .\msys64 (
     curl -L -O https://github.com/msys2/msys2-installer/releases/download/nightly-x86_64/msys2-base-x86_64-latest.sfx.exe
     .\msys2-base-x86_64-latest.sfx.exe x -y -o"."
