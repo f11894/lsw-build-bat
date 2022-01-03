@@ -8,7 +8,7 @@ if not exist .\msys64 (
 )
 .\msys64\usr\bin\bash -lc "pacman -Syu --noconfirm"
 .\msys64\usr\bin\bash -lc "pacman -Su --noconfirm" 
-.\msys64\usr\bin\bash -lc "pacman -S --needed mingw-w64-i686-cmake mingw-w64-i686-gcc mingw-w64-i686-nasm mingw-w64-i686-yasm mingw-w64-i686-ninja mingw-w64-i686-pkg-config mingw-w64-i686-meson git base-devel autoconf automake --noconfirm"
+.\msys64\usr\bin\bash -lc "pacman -S --needed mingw-w64-i686-cmake mingw-w64-i686-gcc mingw-w64-i686-nasm mingw-w64-i686-yasm mingw-w64-i686-ninja mingw-w64-i686-pkg-config mingw-w64-i686-meson git base-devel autotools --noconfirm"
 copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x mfx_dispatch.sh"
 .\msys64\usr\bin\bash -lc "sh -x nv-codec-headers.sh"
