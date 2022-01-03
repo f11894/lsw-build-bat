@@ -6,6 +6,6 @@ else
 fi
 cd L-SMASH-Works-${author}/AviUtl
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/mingw32/lib/pkgconfig
-./configure
+./configure --extra-libs='-static -static-libgcc -static-libstdc++'
 make clean
 make -j $(nproc)
