@@ -6,7 +6,9 @@ if not exist .\msys64 (
     del .\msys2-base-x86_64-latest.sfx.exe
 )
 .\msys64\usr\bin\bash -lc "pacman -Syu --noconfirm"
+taskkill /f /fi "MODULES eq msys-2.0.dll"
 .\msys64\usr\bin\bash -lc "pacman -Su --noconfirm" 
+taskkill /f /fi "MODULES eq msys-2.0.dll"
 .\msys64\usr\bin\bash -lc "pacman -S --needed mingw-w64-i686-cmake mingw-w64-i686-gcc mingw-w64-i686-nasm mingw-w64-i686-yasm mingw-w64-i686-ninja mingw-w64-i686-pkg-config mingw-w64-i686-meson git base-devel autotools --noconfirm"
 copy /y .\sh\*sh ".\msys64\home\%USERNAME%"
 .\msys64\usr\bin\bash -lc "sh -x mfx_dispatch.sh"
